@@ -136,7 +136,7 @@ main hr {
     justify-content: center; 
 
 }
-.display{
+#display{
     visibility: hidden;
     position: relative;
 }
