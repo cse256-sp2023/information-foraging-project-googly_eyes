@@ -109,3 +109,99 @@ main hr {
     background-color: #eee;
     height: 1px;
 }
+
+.classroom_option{
+    width: 150px;
+    height: 40px;
+    border-style: solid;
+    border-color: #2b8282;
+    border-radius: 10px;
+    border-width: 2px;
+    margin: 10px;
+    padding: 5px;
+    margin-top: -10px;
+    text-align: center;
+}
+.classroom_option:hover{
+    background-color: lightblue;
+    cursor:pointer;
+    border-width: 3px;
+}
+* > .classroom_option:hover {
+    font-weight: bold;
+}
+.opts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+
+}
+#display{
+    visibility: hidden;
+    position: relative;
+}
+.show{
+    visibility: visible;
+    position: relative; 
+}
+#ampm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+
+}
+#am, #pm{
+    width: 150px;
+    height: 30px;
+    border-style: solid;
+    border-color: #2b8282;
+    border-radius: 10px;
+    border-width: 1.5px;
+    margin: 10px;
+    padding: 5px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: smaller;
+}
+#am:hover, #pm:hover{
+    background-color: lightblue;
+    cursor:pointer;
+    border-width: 2px;
+}
+.closing{
+    font-size:medium;
+}
+.closing > a{
+    padding: 0px;
+    margin: 0px;
+    display: inline;
+    font-size: medium;
+}
+.closing > a:hover{
+    font-weight: bold;
+}
+#pandalink{
+    position: absolute;
+    top: 50px;    
+}
+#bearlink{
+    position: absolute;
+    top: 50px; 
+}
+#biglink{
+    position: absolute;
+    top: 50px; 
+}
+#sunlink {
+    position: absolute;
+    top: 50px; 
+}
+#picture{ 
+    height: 450px;
+    object-fit: cover;
+    width: 100%;
+    object-position: 0 10%;
+}
+.announcements{
+    padding: 5px 20px 0 20px;
+}
