@@ -11,20 +11,40 @@ export function main() {
     document.getElementById("big_bears").addEventListener("click", classGetter.bind("click", "big_bears"));
     document.getElementById("prospective-option").addEventListener("click", ()=>{
       parentType = "prospective-option";
+      changeStyleClick("", ["prospective-option", "current-option", "teddy", "bear", "big_bears", "am", "pm"]);
       changeStyleClick(parentType, ["prospective-option", "current-option"]);
   
     });
     document.getElementById("current-option").addEventListener("click", ()=>{
       parentType = "current-option";
+      changeStyleClick("", ["prospective-option", "current-option", "teddy", "bear", "big_bears", "am", "pm"]);
       changeStyleClick(parentType, ["prospective-option", "current-option"]);
-  
+      
     });
+    document.getElementById("am").addEventListener("click", changeTime);
+    document.getElementById("pm").addEventListener("click", changeTime);
+
   }
   else {
     buttons();
   }
 }
+export function changeTime(){
+  document.getElementById("am").style.backgroundColor = "white";
+  document.getElementById("pm").style.backgroundColor = "white";
+  var selected;
+  if(className == "Teddy Bear" || className == "Panda Bear"){
+    selected = "teddy";
+  }
+  else if(className == "Bear Cub"){
+    selected = "bear";
+  }
+  else if(className == "Big Bear" || className == "Sun Bear"){
+    selected = "big_bears";
+  }
+  classGetter(selected);
 
+}
 export function clickedFinder(idIn){
   parentType = idIn;
   if(className != ""){
@@ -99,22 +119,27 @@ export function classGetter(classname){
   changeStyleClick(classname, ["teddy", "bear", "big_bears"]);
 
   if(hasTwoTimes){ 
-    document.getElementById("ampm").style.visibility = "visible";
-
-    document.getElementById("am").addEventListener("click", ()=>{
-      changeStyleClick("am", ["am", "pm"]);
-      // clear();
+    if(document.getElementById("class_select").checked){
+      document.getElementById("ampm").style.visibility = "hidden";
       clickedFinder(parentType);
-
-
-    });
-    document.getElementById("pm").addEventListener("click", ()=>{
-      changeStyleClick("pm", ["am", "pm"]);
-      // clear();
-      className = secondClass;
-
-      clickedFinder(parentType);
-    }); 
+    }
+    else {
+      document.getElementById("ampm").style.visibility = "visible";
+      document.getElementById("am").addEventListener("click", ()=>{
+        changeStyleClick("am", ["am", "pm"]);
+        // clear();
+        clickedFinder(parentType);
+  
+  
+      });
+      document.getElementById("pm").addEventListener("click", ()=>{
+        changeStyleClick("pm", ["am", "pm"]);
+        // clear();
+        className = secondClass;
+  
+        clickedFinder(parentType);
+      }); 
+    }
   }
   else {
     document.getElementById("ampm").style.visibility = "hidden";
@@ -170,5 +195,6 @@ export function changeName(){
     document.getElementById("teddy").innerHTML = "Teddy/Panda Bears";
     document.getElementById("bear").innerHTML = "Bear Cubs";
     document.getElementById("big_bears").innerHTML = "Big/Sun Bears";
+    document.getElementById("ampm").style.visibility = "hidden";
   }
 }
