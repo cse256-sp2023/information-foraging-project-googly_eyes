@@ -110,8 +110,8 @@ main hr {
     height: 1px;
 }
 
-.classroom_option{
-    width: 150px;
+.option{
+    width: fit-content;
     height: 40px;
     border-style: solid;
     border-color: #2b8282;
@@ -122,12 +122,12 @@ main hr {
     margin-top: -10px;
     text-align: center;
 }
-.classroom_option:hover{
+.option:hover{
     background-color: lightblue;
     cursor:pointer;
     border-width: 3px;
 }
-* > .classroom_option:hover {
+* > .option:hover {
     font-weight: bold;
 }
 .opts {
@@ -202,6 +202,13 @@ main hr {
     width: 100%;
     object-position: 0 10%;
 }
-.announcements{
+.finder{
     padding: 5px 20px 0 20px;
+}
+#prospective-option, #current-option {
+    width: 300px;
+}
+#prospective-materials, #current-materials {
+    visibility: hidden;
+    position: absolute;
 }
