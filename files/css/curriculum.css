@@ -1,0 +1,39 @@
+#week-parent, #enrichment-parent{
+    display: flex;
+    flex-direction: row;
+}
+.week-selection {
+    width: 150px;
+    border-style: solid;
+    border-color: #2b8282;
+    border-radius: 10px;
+    border-width: 2px;
+    margin: 10px;
+    padding: 5px;
+    margin-top: -10px;
+    text-align: center;
+}
+.week-selection:hover{
+    background-color: lightblue;
+    cursor:pointer;
+    border-width: 3px;
+}
+a {
+    text-decoration: none;
+    color: #555;
+}
+.curr-info{
+    visibility: hidden;
+    width:90%;
+    height:500px;
+    position: absolute;
+    top:300px;
+}
+.curr-info > div{
+    position:absolute;
+    top:200px;
+    /* width:3000px; */
+}
+.page-content{
+    height:1000px;
+}
